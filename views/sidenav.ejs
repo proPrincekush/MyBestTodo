@@ -1,0 +1,44 @@
+<ul id="slide-out" class="sidenav">
+    
+    <li>
+        <div class="user-view">
+         <div class="background">
+           <img src="images/todolist.jpg">
+         </div>
+         <a href="#name"><span class="white-text name">Prince Kushwaha</span></a>
+         <a href="#email"><span class="white-text email">prince@gmail.com</span></a>
+        </div>
+    </li>
+    <li>
+      <div class="card-content black-text center">
+        <span class="card-title">Create New List</span>
+        <form method="get" id="newListForm">
+          <input type="text" onchange="createNewList()" id="newList" required>
+          <button type="submit" 
+            class="btn-floating btn-medium waves-effect waves-light pink accent-2">
+            <i class="large material-icons">add</i>
+          </button>
+        </form>
+    </li>
+    <li><div class="divider"></div></li>
+    <li><h5 class="card-title center">your lists</h5></li>
+   
+    <div class="collection">
+
+      <li class="collection-item">
+        <a href="/" class="">Main</a>
+        <!-- <button class="right" ><i class="material-icons">delete</i></button> -->
+      </li>
+      <% lists.forEach(list=>{ %>
+
+        <% if( list.name !== 'Favicon.ico'){%>
+        <li class="collection-item">
+          <a href="/<%= list.name %>" class=""><%= list.name %></a>
+          <button class="btn right red accent-3" onclick="deleteList('<%= list._id %>')"
+           value="<%= list._id %>"><i class="material-icons center">delete</i></button>
+        </li>
+      <% } }) %>
+
+    </div>
+        
+   </ul>

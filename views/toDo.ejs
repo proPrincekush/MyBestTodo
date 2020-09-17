@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Todo</title>
+
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- icons -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <!-- custom css file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+<div class="container ">
+    <div class="row">
+      <!-- title -->
+      <%- include('title') -%>
+  </div>
+</div> 
+
+<div class="container">
+  <div class="row ">
+    <!-- task -->
+    <%- include('task') -%>
+  </div>
+  <div class="row ">
+    <!-- task -->
+    <% if(compTasks.length>0){%>
+    <%- include('completedTasks') -%>
+    <%}%>
+  </div>
+</div>
+
+     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="main.js"></script>
+</body> 
+</html>

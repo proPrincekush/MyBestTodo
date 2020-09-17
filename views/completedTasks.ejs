@@ -1,0 +1,24 @@
+<div class="col s12 m6 right">
+    <div class="card white">
+      <div class="card-content black-text center">
+        <span class="card-title">My Completed Tasks</span>
+
+      <div class="card-action">
+        <ul class="collection">
+          <li class="collection-item"> Keep Smiling :) </li> 
+          
+          <% compTasks.forEach((task,index)=>{ %>
+        <form action="/deleteItems" method="post">
+          <button type="submit" name="item" value="<%= task._id %>">
+            <li ondblclick="taskComplete('<%= index %>')" id="<%= index %>" 
+            class="collection-item "> <%= task.item %><i class="material-icons">check</i></li> 
+            
+        </button>
+          <input type="hidden" name="list" value="<%= title %>">
+        </form>
+          <% }) %>
+        </ul>
+      </div>
+      
+    </div>
+  </div>

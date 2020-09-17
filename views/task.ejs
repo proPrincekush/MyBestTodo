@@ -1,0 +1,48 @@
+<div class="col s12 m8 right">
+    <div class="card white">
+      <div class="card-content black-text center">
+        <span class="card-title">My ToDo List</span>
+       
+       
+        <form action="/task" method="post">
+          <div class="input-field col s8">
+            <input name="task" placeholder="Enter tasks" id="first_name" type="text" 
+            class="validate" autocomplete="off" required>
+          </div>
+          <button name="list" value = "<%= title %>" type="submit" 
+            class="btn-floating btn-large waves-effect waves-light pink accent-2">
+            <i class="material-icons">add</i><%= title %></button>
+        </div>
+        </form>
+
+      <div class="card-action">
+        <ul class="collection">
+          <li class="collection-item"> Keep Smiling :) </li> 
+          <% tasks.forEach((task,index)=>{ %>
+        <li>
+          <div class="row">
+            
+            <form action="/task/complete" method="post">
+             <button type="submit" name="item" value="<%= task._id %>">
+                 <div class="col s12 l6 m6">
+                   <li ondblclick="taskComplete('<%= index %>')" id="<%= index %>" 
+                     class="collection-item ">   <%= task.item %></li> 
+                    </div>
+                 <div class="col s6 l3 m3">
+                   <li><p><%= String(task.createdAt).substring(16,25)%></p></li>
+                 </div>
+                 <div class="col s6 l3 m3">
+                   <li><p><%= String(task.createdAt).substring(0,10)%></p></li>
+                 </div>
+             </button>
+             <input type="hidden" name="list" value="<%= title %>">
+            
+           </form>
+         </div>
+        </li>
+          <% }) %>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
