@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const todo = require("./schema");
 const date = require("./js/date")
 const _ = require("lodash");
-const { result } = require("lodash");
+
 
 const app = express();
 
